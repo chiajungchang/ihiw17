@@ -72,6 +72,7 @@ foreach $sample  (@{$arrsample}){
 			$aa->{glstring}=~s/[viex]\d+//g;
 #			print $aa->{glstring}."\n";
 			push @oldgls,$aa->{glstring};
+			glTest($aa->{glstring},$has->{SampleID});
 			push @vers,$aa->{"allele-version"};
 		#	die("do not support version higher than 3.25")  if($aa->{"allele-version"}=~/3.2[6789]/);
 		}
@@ -185,7 +186,7 @@ foreach $sample  (@{$arrsample}){
 #	$has->{Genotyping}->{Genotype_GL}=~s/(HLA-.*)(\/[^\|\+\~]*)?\/\1/$1$2/g;
 #	$has->{Genotyping}->{Genotype_GL}=~s/(HLA-.*)(\|[^\+\~]*)?\|\1/$1$2/g;
 #	$has->{Genotyping}->{Genotype_GL}=~s/(HLA-.*)(\|[^\+\~]*)?\|\1/$1$2/g;
-	glTest($has->{Genotyping}->{Genotype_GL},$has->{SampleID});
+#	glTest($has->{Genotyping}->{Genotype_GL},$has->{SampleID});
 	$has->{Genotyping}->{Locus}=$arrLocio;
 	${$arrsampleo}[$i]=$has;
 	$i = $i+1;
