@@ -69,7 +69,7 @@ foreach $sample  (@{$arrsample}){
 		my $db="";
 		foreach my $aa (@{$locus->{"allele-assignment"}}){
 			$aa->{glstring}=~s/[\n\s]//g;
-			$aa->{glstring}=~s/[viex]\d+//g;
+			$aa->{glstring}=~s/[viex#]\d+//g;
 #			print $aa->{glstring}."\n";
 			push @oldgls,$aa->{glstring};
 			glTest($aa->{glstring},$has->{SampleID});
