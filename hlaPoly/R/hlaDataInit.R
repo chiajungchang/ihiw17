@@ -13,7 +13,6 @@ function(hlaVersion="3.25.0"){
 	reftable<-read.table(system.file("hlalib",hlaVersion,"hlaRefAllele.tsv",package="hlaPoly"),sep="\t",header=F)
 	refAllele<-reftable$V2
 	names(refAllele) = reftable$V1
-	refAllele<-refAllele
 	result<-list(genfa=genfa, nucfa=nucfa, features=features, refAllele=refAllele)
 	class(result) = "hlaData.init"
 	return(result)
